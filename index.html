@@ -1,39 +1,977 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Kasakh</title>
-    <link rel="stylesheet" href="CSS/index.css">
-    <link rel="icon" href="Img/K.ico" type="image/x-icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Henrique Moraes — Scrum Master & Future AI PM</title>
+<meta name="description" content="Software Engineer & Scrum Master at Nokia R&D. Building toward AI Product Management. Open to remote-first opportunities.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --bg2: #111111;
+    --bg3: #1a1a1a;
+    --border: rgba(255,255,255,0.08);
+    --border-hover: rgba(255,255,255,0.18);
+    --text: #f0ede8;
+    --muted: #888884;
+    --accent: #c8f564;
+    --accent2: #64c8f5;
+    --accent3: #f5c864;
+    --red: #f56464;
+    --font-display: 'Syne', sans-serif;
+    --font-serif: 'Instrument Serif', serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* Grain overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.4;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.25rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(10,10,10,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.1rem;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--accent); }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  .nav-cta {
+    background: var(--accent);
+    color: #0a0a0a !important;
+    padding: 0.45rem 1.1rem;
+    border-radius: 2rem;
+    font-weight: 500 !important;
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+    transition: opacity 0.2s !important;
+  }
+
+  .nav-cta:hover { opacity: 0.85; color: #0a0a0a !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 8rem 2.5rem 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse 60% 50% at 70% 50%, rgba(200,245,100,0.06) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 60% at 20% 80%, rgba(100,200,245,0.05) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 80px 80px;
+    pointer-events: none;
+  }
+
+  .hero-content {
+    max-width: 900px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(200,245,100,0.1);
+    border: 1px solid rgba(200,245,100,0.25);
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.9rem;
+    border-radius: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-tag::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.8); }
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+  }
+
+  h1 em {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--muted);
+  }
+
+  .hero-sub {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--muted);
+    max-width: 520px;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  .hero-sub strong {
+    color: var(--text);
+    font-weight: 400;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--accent);
+    color: #0a0a0a;
+    padding: 0.85rem 1.75rem;
+    border-radius: 0.35rem;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+    letter-spacing: -0.01em;
+  }
+
+  .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid var(--border-hover);
+    color: var(--text);
+    padding: 0.85rem 1.75rem;
+    border-radius: 0.35rem;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: all 0.2s;
+  }
+
+  .btn-ghost:hover { border-color: var(--text); }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 2.5rem; left: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--muted);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .scroll-line {
+    width: 40px;
+    height: 1px;
+    background: var(--muted);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scroll-line::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: var(--accent);
+    animation: scrollline 2s infinite ease-in-out;
+  }
+
+  @keyframes scrollline {
+    0% { left: -100%; }
+    100% { left: 100%; }
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 6rem 2.5rem; }
+
+  .section-inner { max-width: 1000px; margin: 0 auto; }
+
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    max-width: 40px;
+    height: 1px;
+    background: var(--accent);
+    opacity: 0.4;
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  h2 em {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--muted);
+  }
+
+  /* ── ABOUT / NOW ── */
+  #about {
+    border-top: 1px solid var(--border);
+    background: var(--bg2);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    margin-top: 3rem;
+  }
+
+  .about-text p {
+    color: var(--muted);
+    margin-bottom: 1.2rem;
+    font-size: 1.05rem;
+    font-weight: 300;
+  }
+
+  .about-text p strong {
+    color: var(--text);
+    font-weight: 400;
+  }
+
+  .now-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .now-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1.1rem 1.25rem;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    transition: border-color 0.2s;
+  }
+
+  .now-item:hover { border-color: var(--border-hover); }
+
+  .now-icon {
+    width: 36px; height: 36px;
+    border-radius: 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .now-icon.green { background: rgba(200,245,100,0.12); }
+  .now-icon.blue { background: rgba(100,200,245,0.12); }
+  .now-icon.amber { background: rgba(245,200,100,0.12); }
+
+  .now-content h4 {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.15rem;
+    color: var(--text);
+  }
+
+  .now-content p {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  /* ── SKILLS / STACK ── */
+  #skills {
+    border-top: 1px solid var(--border);
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin-top: 3rem;
+  }
+
+  .skill-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transition: all 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--card-accent, var(--accent));
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+
+  .skill-card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+  .skill-card:hover::before { opacity: 1; }
+
+  .skill-card h3 {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: 2rem;
+    background: rgba(255,255,255,0.06);
+    color: var(--muted);
+    border: 1px solid var(--border);
+    font-weight: 400;
+  }
+
+  /* ── EXPERIENCE TIMELINE ── */
+  #experience {
+    border-top: 1px solid var(--border);
+    background: var(--bg2);
+  }
+
+  .timeline {
+    margin-top: 3rem;
+    position: relative;
+    padding-left: 2rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 1px;
+    background: var(--border);
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-bottom: 3rem;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2.42rem; top: 0.35rem;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--bg2);
+    border: 2px solid var(--border-hover);
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .timeline-item.active::before {
+    border-color: var(--accent);
+    background: var(--accent);
+    box-shadow: 0 0 0 4px rgba(200,245,100,0.15);
+  }
+
+  .timeline-date {
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+
+  .timeline-role {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+  }
+
+  .timeline-company {
+    font-size: 0.88rem;
+    color: var(--accent2);
+    margin-bottom: 0.75rem;
+    font-weight: 400;
+  }
+
+  .timeline-desc {
+    font-size: 0.9rem;
+    color: var(--muted);
+    max-width: 560px;
+    line-height: 1.65;
+  }
+
+  .timeline-desc strong { color: var(--text); font-weight: 400; }
+
+  /* ── WRITING PLACEHOLDER ── */
+  #writing {
+    border-top: 1px solid var(--border);
+  }
+
+  .writing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.25rem;
+    margin-top: 3rem;
+  }
+
+  .post-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1.75rem;
+    text-decoration: none;
+    display: block;
+    transition: all 0.2s;
+    position: relative;
+  }
+
+  .post-card:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-2px);
+  }
+
+  .post-card.placeholder {
+    border-style: dashed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 180px;
+    gap: 0.75rem;
+    cursor: default;
+  }
+
+  .post-card.placeholder:hover { transform: none; }
+
+  .post-tag {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+  }
+
+  .post-title {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.3;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+  }
+
+  .post-meta {
+    font-size: 0.8rem;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .post-meta::before {
+    content: '';
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: var(--muted);
+  }
+
+  .placeholder-icon {
+    font-size: 1.5rem;
+    opacity: 0.3;
+  }
+
+  .placeholder-text {
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+
+  /* ── CONTACT ── */
+  #contact {
+    border-top: 1px solid var(--border);
+    background: var(--bg2);
+  }
+
+  .contact-inner {
+    max-width: 640px;
+  }
+
+  .contact-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+  }
+
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 0.4rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 400;
+    transition: all 0.2s;
+    background: var(--bg3);
+  }
+
+  .contact-link:hover {
+    border-color: var(--border-hover);
+    color: var(--text);
+  }
+
+  .contact-link svg {
+    width: 16px; height: 16px;
+    flex-shrink: 0;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  .footer-logo {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.25rem; }
+    .nav-links { display: none; }
+    section { padding: 4rem 1.25rem; }
+    .hero { padding: 7rem 1.25rem 4rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; }
+    .hero-scroll { display: none; }
+  }
+
+  /* ── ENTRANCE ANIMATIONS ── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeup 0.7s forwards;
+  }
+
+  @keyframes fadeup {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.25s; }
+  .delay-3 { animation-delay: 0.4s; }
+  .delay-4 { animation-delay: 0.55s; }
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="construction">
-            <h1>UNDER</h1>
-            <h1>CONSTRUCTION</h1>
-        </div>
-        <h2>Site building started</h2>
-        <div class="progress-bar">
-            <div class="filler"></div>
-            <span>Loading...</span>
-        </div>
-        <button class="game-button" onclick="window.location.href='clickGame.html'">Click Speed Test</button>
-				<button class="game-button" onclick="window.location.href='cursorGames.html'">Cursor Games</button>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/henrique-villa-moraes">
-                <img src="https://img.shields.io/badge/linkedin-%231DA1F2.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="henrique_linkedin" height="30"/>
-            </a>
-            <a href="https://instagram.com/hmoraes_photos">
-                <img src="https://img.shields.io/badge/instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white" alt="henrique_instagram" height="30"/>
-            </a>
-            <a href="mailto:henriquecvcmoraes@gmail.com">
-                <img src="https://img.shields.io/badge/gmail-EA4335.svg?style=for-the-badge&logo=gmail&logoColor=white" alt="henrique_gmail" height="30"/>
-            </a>
-            <a href="https://twitter.com/hcvmoraes">
-                <img src="https://img.shields.io/badge/twitter-1DA1F2.svg?style=for-the-badge&logo=twitter&logoColor=white" alt="henrique_twitter" height="30"/>
-            </a>
-        </div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">HM<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#writing">Writing</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-tag fade-up">Open to remote roles</div>
+    <h1 class="fade-up delay-1">
+      Scrum Master<br>
+      <em>&amp; future</em><br>
+      AI Product Manager
+    </h1>
+    <p class="hero-sub fade-up delay-2">
+      Software Engineer at <strong>Nokia R&D</strong> — building distributed telecom systems and leading Agile delivery.<br>
+      Transitioning toward AI Product Management. Based in Lisbon, working for the world.
+    </p>
+    <div class="hero-actions fade-up delay-3">
+      <a href="#contact" class="btn-primary">
+        Get in touch
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/henrique-villa-moraes/" target="_blank" class="btn-ghost">
+        LinkedIn
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+      </a>
     </div>
-    <script src="JS/index.js"></script>
-</body>
-</html>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    Scroll
+  </div>
+</section>
+
+<!-- ABOUT / NOW -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-label">About</div>
+    <h2>Engineer. Facilitator.<br><em>Lifelong builder.</em></h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          I'm a Software Engineer and Scrum Master at <strong>Nokia R&D</strong>, working on Kubernetes-native distributed systems for mobile network infrastructure. I've been programming since before university — through <strong>42 Lisboa</strong>, Nokia, and ISCTE's Computer Engineering degree.
+        </p>
+        <p>
+          Lately I've fallen in love with the <strong>product and delivery side</strong> of tech. I'm actively transitioning toward AI Product Management — where deep technical intuition meets user-focused thinking.
+        </p>
+        <p>
+          I use AI tools daily to accelerate both my engineering and my Scrum work. Not as a buzzword — as a genuine workflow shift that's changed how I operate.
+        </p>
+        <p>
+          Long-term goal: <strong>work remotely from anywhere.</strong> Already in progress.
+        </p>
+      </div>
+      <div>
+        <p style="font-size:0.8rem; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); margin-bottom:1rem;">What I'm doing now</p>
+        <ul class="now-list">
+          <li class="now-item">
+            <div class="now-icon green">🏗️</div>
+            <div class="now-content">
+              <h4>Scrum Master @ Nokia</h4>
+              <p>Running sprint ceremonies for an R&D engineering team. Removing blockers, shipping predictably.</p>
+            </div>
+          </li>
+          <li class="now-item">
+            <div class="now-icon blue">🎓</div>
+            <div class="now-content">
+              <h4>BSc Computer Engineering @ ISCTE</h4>
+              <p>Graduating 2027. Algorithms, distributed systems, AI fundamentals.</p>
+            </div>
+          </li>
+          <li class="now-item">
+            <div class="now-icon amber">🤖</div>
+            <div class="now-content">
+              <h4>Building toward AI PM</h4>
+              <p>Learning product fundamentals, studying AI systems, building in public.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-label">Stack & Skills</div>
+    <h2>What I work <em>with</em></h2>
+    <div class="skills-grid">
+      <div class="skill-card" style="--card-accent: var(--accent);">
+        <h3>🔁 Agile Delivery</h3>
+        <div class="skill-tags">
+          <span class="tag">Scrum</span>
+          <span class="tag">Sprint facilitation</span>
+          <span class="tag">Backlog management</span>
+          <span class="tag">Jira</span>
+          <span class="tag">Stakeholder alignment</span>
+          <span class="tag">PSPO I</span>
+        </div>
+      </div>
+      <div class="skill-card" style="--card-accent: var(--accent2);">
+        <h3>⚙️ Backend & Infrastructure</h3>
+        <div class="skill-tags">
+          <span class="tag">Kubernetes</span>
+          <span class="tag">Docker</span>
+          <span class="tag">C / C++</span>
+          <span class="tag">Python</span>
+          <span class="tag">Git</span>
+          <span class="tag">CI/CD</span>
+          <span class="tag">Linux</span>
+        </div>
+      </div>
+      <div class="skill-card" style="--card-accent: var(--accent3);">
+        <h3>🤖 AI & Tools</h3>
+        <div class="skill-tags">
+          <span class="tag">LLM workflows</span>
+          <span class="tag">Claude</span>
+          <span class="tag">Copilot</span>
+          <span class="tag">AI-assisted dev</span>
+          <span class="tag">Prompt engineering</span>
+        </div>
+      </div>
+      <div class="skill-card" style="--card-accent: var(--red);">
+        <h3>📡 Telecom Domain</h3>
+        <div class="skill-tags">
+          <span class="tag">RAN / Baseband</span>
+          <span class="tag">5G</span>
+          <span class="tag">Mobile Networks</span>
+          <span class="tag">Distributed systems</span>
+          <span class="tag">Synchronization</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-label">Experience</div>
+    <h2>Where I've <em>been</em></h2>
+    <div class="timeline">
+
+      <div class="timeline-item active">
+        <div class="timeline-date">Nov 2025 — Present</div>
+        <div class="timeline-role">Scrum Master</div>
+        <div class="timeline-company">Nokia · Lisbon, Portugal · Hybrid</div>
+        <p class="timeline-desc">
+          Facilitating Agile ceremonies for an R&D engineering team building distributed telecom infrastructure.
+          <strong>Removed blockers, aligned Product Owner and engineers, introduced AI-assisted sprint documentation.</strong>
+          Running planning, review, and retrospectives for a cross-functional team.
+        </p>
+      </div>
+
+      <div class="timeline-item active">
+        <div class="timeline-date">Jan 2025 — Present</div>
+        <div class="timeline-role">Software Engineer</div>
+        <div class="timeline-company">Nokia · R&D, RAN / Baseband · Hybrid</div>
+        <p class="timeline-desc">
+          Building synchronization mechanisms across containerized microservices in Nokia's Kubernetes-based Baseband platform.
+          <strong>Production-grade distributed systems</strong> serving live mobile network infrastructure.
+          Stack: C/C++, Python, Kubernetes, Docker, Git.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">2023 — 2024</div>
+        <div class="timeline-role">Common Core Student</div>
+        <div class="timeline-company">42 Lisboa · Peer-to-peer engineering school</div>
+        <p class="timeline-desc">
+          Project-based, self-directed learning in C, C++, and Git through 42's intensive peer curriculum.
+          <strong>Sharpened autonomy, debugging mindset, and collaborative problem-solving</strong> before entering industry.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WRITING -->
+<section id="writing">
+  <div class="section-inner">
+    <div class="section-label">Writing</div>
+    <h2>Thinking <em>out loud</em></h2>
+    <div class="writing-grid">
+      <!-- PLACEHOLDER CARDS — replace with real posts as you publish -->
+      <div class="post-card placeholder">
+        <div class="placeholder-icon">✍️</div>
+        <p class="placeholder-text" style="font-weight:500; color: var(--muted);">First post coming soon</p>
+        <p class="placeholder-text" style="font-size:0.8rem;">How I use AI as a Scrum Master at Nokia R&D</p>
+      </div>
+
+      <!-- TEMPLATE for when you add real posts — just uncomment and fill in:
+      <a href="YOUR_LINKEDIN_POST_URL" target="_blank" class="post-card">
+        <div class="post-tag">AI · Agile</div>
+        <div class="post-title">How I use AI as a Scrum Master at Nokia R&D</div>
+        <div class="post-meta">April 2026 · 3 min read</div>
+      </a>
+      -->
+
+      <div class="post-card placeholder">
+        <div class="placeholder-icon">📡</div>
+        <p class="placeholder-text" style="font-weight:500; color: var(--muted);">In the pipeline</p>
+        <p class="placeholder-text" style="font-size:0.8rem;">What I learned shipping distributed systems at Nokia</p>
+      </div>
+
+      <div class="post-card placeholder">
+        <div class="placeholder-icon">🗺️</div>
+        <p class="placeholder-text" style="font-weight:500; color: var(--muted);">In the pipeline</p>
+        <p class="placeholder-text" style="font-size:0.8rem;">My path from Software Engineer to AI Product Manager</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-inner">
+      <div class="section-label">Contact</div>
+      <h2>Let's <em>talk</em></h2>
+      <p style="color: var(--muted); margin-top: 1rem; max-width: 480px; font-size: 1.05rem;">
+        Open to conversations about AI Product Management, remote-first roles, Agile coaching, or anything interesting. I reply to everyone.
+      </p>
+      <div class="contact-links">
+        <a href="/cdn-cgi/l/email-protection#3058555e42594145555346535d5f4251554370575d51595c1e535f5d" class="contact-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+          Email me
+        </a>
+        <a href="https://www.linkedin.com/in/henrique-villa-moraes/" target="_blank" class="contact-link">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/hvmoraes" target="_blank" class="contact-link">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">Henrique Moraes</span>
+  <span>Lisbon, Portugal · Open to remote worldwide</span>
+  <span>© 2026</span>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// Animate timeline items on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.skill-card, .timeline-item, .post-card, .now-item').forEach(el => {
+  el.style.opacity = '0';
+  el.

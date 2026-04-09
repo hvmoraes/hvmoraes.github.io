@@ -1,21 +1,60 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Kasakh</title>
-		<link rel="stylesheet" href="CSS/error.css">
-		<link rel="icon" href="Img/K.ico" type="image/x-icon">
-	</head>
-	<body>
-		<div class="noise"></div>
-		<div class="overlay"></div>
-		<div class="terminal">
-			<h1>Error <span class="errorcode">404</span></h1>
-			<p class="output">
-				The page you were looking for doesn't exist... 
-			</p>
-			<p class="output">
-				You can <a href="hvmoraes.github.io">Return to HomePage</a>
-			</p>
-		</div>
-	</body>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 — Henrique Moraes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0a0a0a;
+    color: #f0ede8;
+    font-family: 'DM Sans', sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  .code {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(6rem, 20vw, 12rem);
+    font-weight: 800;
+    line-height: 1;
+    color: #c8f564;
+    letter-spacing: -0.04em;
+  }
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  p { color: #888884; font-size: 1rem; font-weight: 300; }
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 0.35rem;
+    color: #f0ede8;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: border-color 0.2s;
+  }
+  a:hover { border-color: rgba(255,255,255,0.4); }
+</style>
+</head>
+<body>
+  <div class="code">404</div>
+  <h1>Page not found</h1>
+  <p>This page doesn't exist — but the rest of the site does.</p>
+  <a href="/">← Back home</a>
+</body>
 </html>
