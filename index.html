@@ -3,11 +3,43 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Henrique Moraes — Scrum Master & Future AI PM</title>
-<meta name="description" content="Software Engineer & Scrum Master at Nokia R&D. Building toward AI Product Management. Open to remote-first opportunities.">
+<title>Henrique Moraes | Product Owner, 5G Baseband &amp; AI-RAN at Nokia</title>
+<meta name="description" content="Product Owner at Nokia R&amp;D for 5G Baseband and AI-RAN software. Former software engineer in C++ and Kubernetes. I work on backlog prioritization, effort estimation, stakeholder management and cross team alignment. Based in Lisbon, open to client facing and international work.">
+<meta name="author" content="Henrique Moraes">
+<link rel="canonical" href="https://hvmoraes.github.io/">
+
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Henrique Moraes | Product Owner, 5G Baseband &amp; AI-RAN at Nokia">
+<meta property="og:description" content="Product Owner at Nokia R&amp;D. I turn deep technical work into decisions people can act on. Lisbon based, open to client facing and international roles.">
+<meta property="og:url" content="https://hvmoraes.github.io/">
+<meta name="twitter:card" content="summary">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Henrique Moraes",
+  "jobTitle": "Product Owner",
+  "worksFor": { "@type": "Organization", "name": "Nokia" },
+  "url": "https://hvmoraes.github.io/",
+  "address": { "@type": "PostalAddress", "addressLocality": "Lisbon", "addressCountry": "PT" },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "ISCTE, Instituto Universitario de Lisboa" },
+    { "@type": "EducationalOrganization", "name": "42 Lisboa" }
+  ],
+  "knowsAbout": ["Product Ownership","Backlog Prioritization","Stakeholder Management","5G","RAN","AI-RAN","Kubernetes","C++","Distributed Systems","Agile","Scrum"],
+  "knowsLanguage": ["Portuguese","English","Spanish"],
+  "sameAs": [
+    "https://www.linkedin.com/in/henrique-villa-moraes/",
+    "https://github.com/hvmoraes"
+  ]
+}
+</script>
+
 <style>
   :root {
     --bg: #0a0a0a;
@@ -16,7 +48,7 @@
     --border: rgba(255,255,255,0.08);
     --border-hover: rgba(255,255,255,0.18);
     --text: #f0ede8;
-    --muted: #888884;
+    --muted: #8b8b86;
     --accent: #c8f564;
     --accent2: #64c8f5;
     --accent3: #f5c864;
@@ -27,7 +59,6 @@
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
 
   body {
@@ -40,7 +71,6 @@
     overflow-x: hidden;
   }
 
-  /* Grain overlay */
   body::before {
     content: '';
     position: fixed;
@@ -51,7 +81,7 @@
     opacity: 0.4;
   }
 
-  /* ── NAV ── */
+  /* NAV */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -76,11 +106,7 @@
 
   .nav-logo span { color: var(--accent); }
 
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
 
   .nav-links a {
     color: var(--muted);
@@ -107,7 +133,7 @@
 
   .nav-cta:hover { opacity: 0.85; color: #0a0a0a !important; }
 
-  /* ── HERO ── */
+  /* HERO */
   .hero {
     min-height: 100vh;
     display: flex;
@@ -120,7 +146,7 @@
   .hero-bg {
     position: absolute;
     inset: 0;
-    background: 
+    background:
       radial-gradient(ellipse 60% 50% at 70% 50%, rgba(200,245,100,0.06) 0%, transparent 60%),
       radial-gradient(ellipse 40% 60% at 20% 80%, rgba(100,200,245,0.05) 0%, transparent 50%);
     pointer-events: none;
@@ -129,18 +155,14 @@
   .hero-grid {
     position: absolute;
     inset: 0;
-    background-image: 
+    background-image:
       linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
       linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
     background-size: 80px 80px;
     pointer-events: none;
   }
 
-  .hero-content {
-    max-width: 900px;
-    position: relative;
-    z-index: 1;
-  }
+  .hero-content { max-width: 920px; position: relative; z-index: 1; }
 
   .hero-tag {
     display: inline-flex;
@@ -173,40 +195,33 @@
 
   h1 {
     font-family: var(--font-display);
-    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-size: clamp(2.4rem, 5.6vw, 4.4rem);
     font-weight: 800;
-    line-height: 0.95;
+    line-height: 1.02;
     letter-spacing: -0.03em;
     margin-bottom: 1.5rem;
+    max-width: 16ch;
   }
 
   h1 em {
     font-family: var(--font-serif);
     font-style: italic;
     font-weight: 400;
-    color: var(--muted);
+    color: var(--accent);
   }
 
   .hero-sub {
-    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-size: clamp(1rem, 2vw, 1.15rem);
     color: var(--muted);
-    max-width: 520px;
+    max-width: 580px;
     margin-bottom: 2.5rem;
     font-weight: 300;
-    line-height: 1.6;
+    line-height: 1.7;
   }
 
-  .hero-sub strong {
-    color: var(--text);
-    font-weight: 400;
-  }
+  .hero-sub strong { color: var(--text); font-weight: 400; }
 
-  .hero-actions {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    align-items: center;
-  }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
 
   .btn-primary {
     display: inline-flex;
@@ -254,8 +269,7 @@
   }
 
   .scroll-line {
-    width: 40px;
-    height: 1px;
+    width: 40px; height: 1px;
     background: var(--muted);
     position: relative;
     overflow: hidden;
@@ -275,9 +289,8 @@
     100% { left: 100%; }
   }
 
-  /* ── SECTIONS ── */
+  /* SECTIONS */
   section { padding: 6rem 2.5rem; }
-
   .section-inner { max-width: 1000px; margin: 0 auto; }
 
   .section-label {
@@ -303,10 +316,10 @@
 
   h2 {
     font-family: var(--font-display);
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(1.9rem, 4vw, 2.8rem);
     font-weight: 700;
     letter-spacing: -0.02em;
-    line-height: 1.1;
+    line-height: 1.12;
     margin-bottom: 1rem;
   }
 
@@ -317,15 +330,12 @@
     color: var(--muted);
   }
 
-  /* ── ABOUT / NOW ── */
-  #about {
-    border-top: 1px solid var(--border);
-    background: var(--bg2);
-  }
+  /* ABOUT */
+  #about { border-top: 1px solid var(--border); background: var(--bg2); }
 
   .about-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.15fr 1fr;
     gap: 4rem;
     align-items: start;
     margin-top: 3rem;
@@ -338,17 +348,9 @@
     font-weight: 300;
   }
 
-  .about-text p strong {
-    color: var(--text);
-    font-weight: 400;
-  }
+  .about-text p strong { color: var(--text); font-weight: 400; }
 
-  .now-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
+  .now-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
 
   .now-item {
     display: flex;
@@ -384,16 +386,10 @@
     color: var(--text);
   }
 
-  .now-content p {
-    font-size: 0.82rem;
-    color: var(--muted);
-    line-height: 1.4;
-  }
+  .now-content p { font-size: 0.82rem; color: var(--muted); line-height: 1.45; }
 
-  /* ── SKILLS / STACK ── */
-  #skills {
-    border-top: 1px solid var(--border);
-  }
+  /* SKILLS */
+  #skills { border-top: 1px solid var(--border); }
 
   .skills-grid {
     display: grid;
@@ -436,11 +432,7 @@
     gap: 0.6rem;
   }
 
-  .skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 
   .tag {
     font-size: 0.75rem;
@@ -452,17 +444,10 @@
     font-weight: 400;
   }
 
-  /* ── EXPERIENCE TIMELINE ── */
-  #experience {
-    border-top: 1px solid var(--border);
-    background: var(--bg2);
-  }
+  /* EXPERIENCE */
+  #experience { border-top: 1px solid var(--border); background: var(--bg2); }
 
-  .timeline {
-    margin-top: 3rem;
-    position: relative;
-    padding-left: 2rem;
-  }
+  .timeline { margin-top: 3rem; position: relative; padding-left: 2rem; }
 
   .timeline::before {
     content: '';
@@ -472,10 +457,7 @@
     background: var(--border);
   }
 
-  .timeline-item {
-    position: relative;
-    padding-bottom: 3rem;
-  }
+  .timeline-item { position: relative; padding-bottom: 2.75rem; }
 
   .timeline-item::before {
     content: '';
@@ -516,19 +498,36 @@
     font-weight: 400;
   }
 
-  .timeline-desc {
-    font-size: 0.9rem;
-    color: var(--muted);
-    max-width: 560px;
-    line-height: 1.65;
-  }
-
+  .timeline-desc { font-size: 0.92rem; color: var(--muted); max-width: 600px; line-height: 1.65; }
   .timeline-desc strong { color: var(--text); font-weight: 400; }
 
-  /* ── WRITING PLACEHOLDER ── */
-  #writing {
-    border-top: 1px solid var(--border);
+  /* BEYOND */
+  #beyond { border-top: 1px solid var(--border); }
+
+  .beyond-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    margin-top: 3rem;
   }
+
+  .beyond-text p { color: var(--muted); margin-bottom: 1.2rem; font-size: 1.05rem; }
+  .beyond-text p strong { color: var(--text); font-weight: 400; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+
+  .chip {
+    font-size: 0.82rem;
+    padding: 0.4rem 0.85rem;
+    border-radius: 2rem;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+
+  /* WRITING */
+  #writing { border-top: 1px solid var(--border); background: var(--bg2); }
 
   .writing-grid {
     display: grid;
@@ -538,7 +537,7 @@
   }
 
   .post-card {
-    background: var(--bg2);
+    background: var(--bg3);
     border: 1px solid var(--border);
     border-radius: 0.75rem;
     padding: 1.75rem;
@@ -548,10 +547,7 @@
     position: relative;
   }
 
-  .post-card:hover {
-    border-color: var(--border-hover);
-    transform: translateY(-2px);
-  }
+  .post-card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
 
   .post-card.placeholder {
     border-style: dashed;
@@ -581,18 +577,12 @@
     font-size: 1.05rem;
     font-weight: 600;
     color: var(--text);
-    line-height: 1.3;
+    line-height: 1.35;
     margin-bottom: 0.75rem;
     letter-spacing: -0.01em;
   }
 
-  .post-meta {
-    font-size: 0.8rem;
-    color: var(--muted);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
+  .post-meta { font-size: 0.8rem; color: var(--muted); display: flex; align-items: center; gap: 0.5rem; }
 
   .post-meta::before {
     content: '';
@@ -601,32 +591,15 @@
     background: var(--muted);
   }
 
-  .placeholder-icon {
-    font-size: 1.5rem;
-    opacity: 0.3;
-  }
+  .placeholder-icon { font-size: 1.5rem; opacity: 0.3; }
+  .placeholder-text { color: var(--muted); font-size: 0.85rem; }
 
-  .placeholder-text {
-    color: var(--muted);
-    font-size: 0.85rem;
-  }
+  /* CONTACT */
+  #contact { border-top: 1px solid var(--border); }
 
-  /* ── CONTACT ── */
-  #contact {
-    border-top: 1px solid var(--border);
-    background: var(--bg2);
-  }
+  .contact-inner { max-width: 660px; }
 
-  .contact-inner {
-    max-width: 640px;
-  }
-
-  .contact-links {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-top: 2.5rem;
-  }
+  .contact-links { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2.5rem; }
 
   .contact-link {
     display: inline-flex;
@@ -641,19 +614,14 @@
     font-weight: 400;
     transition: all 0.2s;
     background: var(--bg3);
+    cursor: pointer;
+    font-family: inherit;
   }
 
-  .contact-link:hover {
-    border-color: var(--border-hover);
-    color: var(--text);
-  }
+  .contact-link:hover { border-color: var(--border-hover); color: var(--text); }
+  .contact-link svg { width: 16px; height: 16px; flex-shrink: 0; }
 
-  .contact-link svg {
-    width: 16px; height: 16px;
-    flex-shrink: 0;
-  }
-
-  /* ── FOOTER ── */
+  /* FOOTER */
   footer {
     border-top: 1px solid var(--border);
     padding: 2rem 2.5rem;
@@ -662,6 +630,8 @@
     align-items: center;
     font-size: 0.8rem;
     color: var(--muted);
+    gap: 1rem;
+    flex-wrap: wrap;
   }
 
   .footer-logo {
@@ -671,32 +641,31 @@
     color: var(--text);
   }
 
-  /* ── RESPONSIVE ── */
+  /* RESPONSIVE */
   @media (max-width: 768px) {
     nav { padding: 1rem 1.25rem; }
     .nav-links { display: none; }
     section { padding: 4rem 1.25rem; }
     .hero { padding: 7rem 1.25rem 4rem; }
-    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .about-grid, .beyond-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     footer { flex-direction: column; gap: 1rem; text-align: center; }
     .hero-scroll { display: none; }
+    h1 { max-width: none; }
   }
 
-  /* ── ENTRANCE ANIMATIONS ── */
-  .fade-up {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeup 0.7s forwards;
-  }
+  /* ANIMATIONS */
+  .fade-up { opacity: 0; transform: translateY(20px); animation: fadeup 0.7s forwards; }
 
-  @keyframes fadeup {
-    to { opacity: 1; transform: translateY(0); }
-  }
+  @keyframes fadeup { to { opacity: 1; transform: translateY(0); } }
 
   .delay-1 { animation-delay: 0.1s; }
   .delay-2 { animation-delay: 0.25s; }
   .delay-3 { animation-delay: 0.4s; }
-  .delay-4 { animation-delay: 0.55s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+    .fade-up { opacity: 1; transform: none; }
+  }
 </style>
 </head>
 <body>
@@ -708,7 +677,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
-    <li><a href="#writing">Writing</a></li>
+    <li><a href="#beyond">Beyond work</a></li>
     <li><a href="#contact" class="nav-cta">Contact</a></li>
   </ul>
 </nav>
@@ -718,22 +687,25 @@
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
   <div class="hero-content">
-    <div class="hero-tag fade-up">Open to remote roles</div>
+    <div class="hero-tag fade-up">Open to conversations</div>
     <h1 class="fade-up delay-1">
-      Scrum Master<br>
-      <em>&amp; future</em><br>
-      AI Product Manager
+      I turn hard technical work into decisions people can <em>act on</em>.
     </h1>
     <p class="hero-sub fade-up delay-2">
-      Software Engineer at <strong>Nokia R&D</strong> — building distributed telecom systems and leading Agile delivery.<br>
-      Transitioning toward AI Product Management. Based in Lisbon, working for the world.
+      I'm <strong>Henrique</strong>, Product Owner at <strong>Nokia R&amp;D</strong> for 5G Baseband software, inside Nokia's AI-RAN programme. I write the backlog for teams whose code I used to write myself.
+      <br><br>
+      Based in Lisbon. Happy to get on a plane.
     </p>
     <div class="hero-actions fade-up delay-3">
       <a href="#contact" class="btn-primary">
         Get in touch
         <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-      <a href="https://www.linkedin.com/in/henrique-villa-moraes/" target="_blank" class="btn-ghost">
+      <a href="Henrique_Moraes_CV.pdf" target="_blank" rel="noopener" class="btn-ghost">
+        Download CV
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3v12M7 12l5 5 5-5M4 21h16"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/henrique-villa-moraes/" target="_blank" rel="noopener" class="btn-ghost">
         LinkedIn
         <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
       </a>
@@ -745,48 +717,51 @@
   </div>
 </section>
 
-<!-- ABOUT / NOW -->
+<!-- ABOUT -->
 <section id="about">
   <div class="section-inner">
     <div class="section-label">About</div>
-    <h2>Engineer. Facilitator.<br><em>Lifelong builder.</em></h2>
+    <h2>Engineer first.<br><em>Now on the other side of the table.</em></h2>
     <div class="about-grid">
       <div class="about-text">
         <p>
-          I'm a Software Engineer and Scrum Master at <strong>Nokia R&D</strong>, working on Kubernetes-native distributed systems for mobile network infrastructure. I've been programming since before university — through <strong>42 Lisboa</strong>, Nokia, and ISCTE's Computer Engineering degree.
+          I joined <strong>Nokia</strong> writing C++ for 5G cloud baseband software. Then I ran the sprints. Now I help shape the product. Three roles in under two years, all on the same product area, which means I know exactly what I'm asking my teams to build.
         </p>
         <p>
-          Lately I've fallen in love with the <strong>product and delivery side</strong> of tech. I'm actively transitioning toward AI Product Management — where deep technical intuition meets user-focused thinking.
+          Day to day I own <strong>feature selection and backlog prioritization across two R&amp;D engineering teams</strong>. I run effort estimation and risk assessment, translate customer and system requirements into work engineers can actually start, and keep Scrum Masters, architects and system engineers pointed in the same direction.
         </p>
         <p>
-          I use AI tools daily to accelerate both my engineering and my Scrum work. Not as a buzzword — as a genuine workflow shift that's changed how I operate.
+          The part I did not expect to love is the human one. Building software taught me how to solve technical problems. Building products is teaching me <strong>which problems are worth solving</strong>, and that the plan is the easy part. The real work is the relationships. Staying close to people, knowing where they are stuck and what they need, is what keeps a plan alive.
         </p>
         <p>
-          Long-term goal: <strong>work remotely from anywhere.</strong> Already in progress.
+          Having written this kind of code myself helps. When an engineer tells me something is harder than it looks, I usually know why. When an estimate looks too optimistic, I can usually tell before the sprint does.
+        </p>
+        <p>
+          Where I'm heading: <strong>customer facing technical work</strong>. Technical account management, customer engagement, solutions roles. Places where the depth is the credibility and the relationship is the job.
         </p>
       </div>
       <div>
         <p style="font-size:0.8rem; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); margin-bottom:1rem;">What I'm doing now</p>
         <ul class="now-list">
           <li class="now-item">
-            <div class="now-icon green">🏗️</div>
+            <div class="now-icon green">📡</div>
             <div class="now-content">
-              <h4>Scrum Master @ Nokia</h4>
-              <p>Running sprint ceremonies for an R&D engineering team. Removing blockers, shipping predictably.</p>
+              <h4>Product Owner at Nokia</h4>
+              <p>Backlog, prioritization and risk for two R&amp;D teams building 5G Baseband software inside the AI-RAN programme.</p>
             </div>
           </li>
           <li class="now-item">
             <div class="now-icon blue">🎓</div>
             <div class="now-content">
-              <h4>BSc Computer Engineering @ ISCTE</h4>
-              <p>Graduating 2027. Algorithms, distributed systems, AI fundamentals.</p>
+              <h4>BSc Computer Engineering at ISCTE</h4>
+              <p>Finishing in 2027. Algorithms, distributed systems, AI, computer architecture.</p>
             </div>
           </li>
           <li class="now-item">
-            <div class="now-icon amber">🤖</div>
+            <div class="now-icon amber">🤝</div>
             <div class="now-content">
-              <h4>Building toward AI PM</h4>
-              <p>Learning product fundamentals, studying AI systems, building in public.</p>
+              <h4>Growing toward client facing work</h4>
+              <p>Stakeholder management, customer conversations, and the parts of product that happen face to face.</p>
             </div>
           </li>
         </ul>
@@ -798,50 +773,76 @@
 <!-- SKILLS -->
 <section id="skills">
   <div class="section-inner">
-    <div class="section-label">Stack & Skills</div>
-    <h2>What I work <em>with</em></h2>
+    <div class="section-label">What I work with</div>
+    <h2>Depth on both <em>sides</em></h2>
     <div class="skills-grid">
       <div class="skill-card" style="--card-accent: var(--accent);">
-        <h3>🔁 Agile Delivery</h3>
+        <h3>🎯 Product &amp; Delivery</h3>
         <div class="skill-tags">
+          <span class="tag">Product Ownership</span>
+          <span class="tag">Backlog prioritization</span>
+          <span class="tag">Feature selection</span>
+          <span class="tag">Effort estimation</span>
+          <span class="tag">Risk assessment</span>
+          <span class="tag">Roadmap planning</span>
           <span class="tag">Scrum</span>
-          <span class="tag">Sprint facilitation</span>
-          <span class="tag">Backlog management</span>
           <span class="tag">Jira</span>
-          <span class="tag">Stakeholder alignment</span>
-          <span class="tag">PSPO I</span>
-        </div>
-      </div>
-      <div class="skill-card" style="--card-accent: var(--accent2);">
-        <h3>⚙️ Backend & Infrastructure</h3>
-        <div class="skill-tags">
-          <span class="tag">Kubernetes</span>
-          <span class="tag">Docker</span>
-          <span class="tag">C / C++</span>
-          <span class="tag">Python</span>
-          <span class="tag">Git</span>
-          <span class="tag">CI/CD</span>
-          <span class="tag">Linux</span>
+          <span class="tag">Confluence</span>
         </div>
       </div>
       <div class="skill-card" style="--card-accent: var(--accent3);">
-        <h3>🤖 AI & Tools</h3>
+        <h3>🤝 Stakeholders &amp; Customers</h3>
         <div class="skill-tags">
-          <span class="tag">LLM workflows</span>
-          <span class="tag">Claude</span>
-          <span class="tag">Copilot</span>
-          <span class="tag">AI-assisted dev</span>
-          <span class="tag">Prompt engineering</span>
+          <span class="tag">Stakeholder management</span>
+          <span class="tag">Cross team alignment</span>
+          <span class="tag">Requirements translation</span>
+          <span class="tag">Executive communication</span>
+          <span class="tag">Relationship building</span>
+          <span class="tag">Facilitation</span>
+        </div>
+      </div>
+      <div class="skill-card" style="--card-accent: var(--accent2);">
+        <h3>⚙️ Engineering</h3>
+        <div class="skill-tags">
+          <span class="tag">C++</span>
+          <span class="tag">Python</span>
+          <span class="tag">Kubernetes</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Linux</span>
+          <span class="tag">Git</span>
+          <span class="tag">CI/CD</span>
+          <span class="tag">Distributed systems</span>
+          <span class="tag">Microservices</span>
         </div>
       </div>
       <div class="skill-card" style="--card-accent: var(--red);">
-        <h3>📡 Telecom Domain</h3>
+        <h3>📶 Telecom domain</h3>
         <div class="skill-tags">
-          <span class="tag">RAN / Baseband</span>
           <span class="tag">5G</span>
-          <span class="tag">Mobile Networks</span>
-          <span class="tag">Distributed systems</span>
-          <span class="tag">Synchronization</span>
+          <span class="tag">RAN</span>
+          <span class="tag">Baseband</span>
+          <span class="tag">AI-RAN</span>
+          <span class="tag">Mobile networks</span>
+          <span class="tag">Real time systems</span>
+          <span class="tag">Network synchronisation</span>
+        </div>
+      </div>
+      <div class="skill-card" style="--card-accent: var(--accent);">
+        <h3>🤖 AI in the workflow</h3>
+        <div class="skill-tags">
+          <span class="tag">LLM workflow integration</span>
+          <span class="tag">Prompt engineering</span>
+          <span class="tag">Claude</span>
+          <span class="tag">Copilot</span>
+          <span class="tag">AI assisted planning</span>
+        </div>
+      </div>
+      <div class="skill-card" style="--card-accent: var(--accent2);">
+        <h3>🌍 Languages</h3>
+        <div class="skill-tags">
+          <span class="tag">Portuguese, native</span>
+          <span class="tag">English, fluent</span>
+          <span class="tag">Spanish, advanced</span>
         </div>
       </div>
     </div>
@@ -856,37 +857,88 @@
     <div class="timeline">
 
       <div class="timeline-item active">
-        <div class="timeline-date">Nov 2025 — Present</div>
-        <div class="timeline-role">Scrum Master</div>
-        <div class="timeline-company">Nokia · Lisbon, Portugal · Hybrid</div>
+        <div class="timeline-date">Jul 2026 to present</div>
+        <div class="timeline-role">Product Owner</div>
+        <div class="timeline-company">Nokia · 5G Baseband R&amp;D · Lisbon, Portugal</div>
         <p class="timeline-desc">
-          Facilitating Agile ceremonies for an R&D engineering team building distributed telecom infrastructure.
-          <strong>Removed blockers, aligned Product Owner and engineers, introduced AI-assisted sprint documentation.</strong>
-          Running planning, review, and retrospectives for a cross-functional team.
-        </p>
-      </div>
-
-      <div class="timeline-item active">
-        <div class="timeline-date">Jan 2025 — Present</div>
-        <div class="timeline-role">Software Engineer</div>
-        <div class="timeline-company">Nokia · R&D, RAN / Baseband · Hybrid</div>
-        <p class="timeline-desc">
-          Building synchronization mechanisms across containerized microservices in Nokia's Kubernetes-based Baseband platform.
-          <strong>Production-grade distributed systems</strong> serving live mobile network infrastructure.
-          Stack: C/C++, Python, Kubernetes, Docker, Git.
+          Product ownership across two engineering teams inside Nokia's AI-RAN programme.
+          <strong>I decide what gets built, when, and in which order</strong>, balancing customer value against technical constraints and release timelines. I run effort estimation and risk assessment, and clear cross team dependencies before they turn into delays.
         </p>
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-date">2023 — 2024</div>
-        <div class="timeline-role">Common Core Student</div>
-        <div class="timeline-company">42 Lisboa · Peer-to-peer engineering school</div>
+        <div class="timeline-date">Nov 2025 to Jun 2026</div>
+        <div class="timeline-role">Scrum Master</div>
+        <div class="timeline-company">Nokia · 5G Baseband R&amp;D · Lisbon, Portugal</div>
         <p class="timeline-desc">
-          Project-based, self-directed learning in C, C++, and Git through 42's intensive peer curriculum.
-          <strong>Sharpened autonomy, debugging mindset, and collaborative problem-solving</strong> before entering industry.
+          Agile delivery for a cross functional team of 10 engineers, held in parallel with my engineering role.
+          <strong>Cut average blocker resolution time by two days</strong> through structured dependency tracking, and introduced AI assisted sprint documentation that reduced ceremony preparation time for the whole team.
         </p>
       </div>
 
+      <div class="timeline-item">
+        <div class="timeline-date">Jan 2025 to Jun 2026</div>
+        <div class="timeline-role">Software Engineer</div>
+        <div class="timeline-company">Nokia · RAN / Baseband platform · Lisbon, Portugal</div>
+        <p class="timeline-desc">
+          Synchronization mechanisms for Kubernetes pods in Nokia's Baseband environment, keeping distributed nodes consistent in real time telecom contexts.
+          <strong>Integrated low level C++ components with containerized microservices</strong> and contributed to CI/CD and container orchestration.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Sep 2022 to Apr 2025</div>
+        <div class="timeline-role">Software Engineering Programme</div>
+        <div class="timeline-company">42 Lisboa · Peer to peer engineering school</div>
+        <p class="timeline-desc">
+          Project based curriculum in C, C++, Python and JavaScript. Built a real time multiplayer web platform, a high performance IRC server in C++ handling 50 or more concurrent connections, and a 3D engine in C using ray casting.
+          <strong>Where I learned to be autonomous and to debug anything.</strong>
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Sep 2025 to Jul 2027, expected</div>
+        <div class="timeline-role">BSc Computer Engineering</div>
+        <div class="timeline-company">ISCTE, Instituto Universitário de Lisboa</div>
+        <p class="timeline-desc">
+          Algorithms and data structures, operating systems, distributed systems, artificial intelligence, computer architecture and software engineering. Studying while working full time at Nokia.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BEYOND WORK -->
+<section id="beyond">
+  <div class="section-inner">
+    <div class="section-label">Beyond work</div>
+    <h2>The rest of <em>it</em></h2>
+    <div class="beyond-grid">
+      <div class="beyond-text">
+        <p>
+          I spent years in the <strong>Scouts</strong>, which is where I first learned that leading a group is mostly logistics, patience and food. Later, volunteering with <strong>Cascais Jovem</strong> on youth development, community events and education workshops.
+        </p>
+        <p>
+          Outside all of that: bouldering, Krav Maga, a camera I carry more often than I use, and a long running interest in electric vehicles and personal finance. I travel whenever the calendar allows, and I'm building toward a life where the calendar allows more often.
+        </p>
+        <p>
+          If any of this overlaps with you, that is usually a better opening line than my job title.
+        </p>
+      </div>
+      <div>
+        <p style="font-size:0.8rem; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); margin-bottom:1rem;">Things I spend time on</p>
+        <div class="chips">
+          <span class="chip">📷 Photography</span>
+          <span class="chip">🧗 Bouldering</span>
+          <span class="chip">🥋 Krav Maga</span>
+          <span class="chip">✈️ Travel</span>
+          <span class="chip">⚡ EVs</span>
+          <span class="chip">📈 Personal finance</span>
+          <span class="chip">⚜️ Scouts</span>
+          <span class="chip">🤲 Cascais Jovem</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -897,32 +949,25 @@
     <div class="section-label">Writing</div>
     <h2>Thinking <em>out loud</em></h2>
     <div class="writing-grid">
-      <!-- PLACEHOLDER CARDS — replace with real posts as you publish -->
-      <div class="post-card placeholder">
-        <div class="placeholder-icon">✍️</div>
-        <p class="placeholder-text" style="font-weight:500; color: var(--muted);">First post coming soon</p>
-        <p class="placeholder-text" style="font-size:0.8rem;">How I use AI as a Scrum Master at Nokia R&D</p>
-      </div>
 
-      <!-- TEMPLATE for when you add real posts — just uncomment and fill in:
-      <a href="YOUR_LINKEDIN_POST_URL" target="_blank" class="post-card">
-        <div class="post-tag">AI · Agile</div>
-        <div class="post-title">How I use AI as a Scrum Master at Nokia R&D</div>
-        <div class="post-meta">April 2026 · 3 min read</div>
+      <a href="https://www.linkedin.com/in/henrique-villa-moraes/recent-activity/all/" target="_blank" rel="noopener" class="post-card">
+        <div class="post-tag">Product · Career</div>
+        <div class="post-title">From writing the code to writing the backlog</div>
+        <div class="post-meta">On LinkedIn · 2026</div>
       </a>
-      -->
 
       <div class="post-card placeholder">
         <div class="placeholder-icon">📡</div>
-        <p class="placeholder-text" style="font-weight:500; color: var(--muted);">In the pipeline</p>
-        <p class="placeholder-text" style="font-size:0.8rem;">What I learned shipping distributed systems at Nokia</p>
+        <p class="placeholder-text" style="font-weight:500;">In the pipeline</p>
+        <p class="placeholder-text" style="font-size:0.8rem;">What AI-RAN actually changes for the people building baseband software</p>
       </div>
 
       <div class="post-card placeholder">
-        <div class="placeholder-icon">🗺️</div>
-        <p class="placeholder-text" style="font-weight:500; color: var(--muted);">In the pipeline</p>
-        <p class="placeholder-text" style="font-size:0.8rem;">My path from Software Engineer to AI Product Manager</p>
+        <div class="placeholder-icon">🧭</div>
+        <p class="placeholder-text" style="font-weight:500;">In the pipeline</p>
+        <p class="placeholder-text" style="font-size:0.8rem;">Estimating engineering work when you used to do the engineering</p>
       </div>
+
     </div>
   </div>
 </section>
@@ -933,19 +978,23 @@
     <div class="contact-inner">
       <div class="section-label">Contact</div>
       <h2>Let's <em>talk</em></h2>
-      <p style="color: var(--muted); margin-top: 1rem; max-width: 480px; font-size: 1.05rem;">
-        Open to conversations about AI Product Management, remote-first roles, Agile coaching, or anything interesting. I reply to everyone.
+      <p style="color: var(--muted); margin-top: 1rem; max-width: 520px; font-size: 1.05rem;">
+        I'm not actively looking, but I'm always open to a good conversation. Technical account management, customer engagement, product roles, AI-RAN, or something I haven't thought of yet. I reply to everyone.
       </p>
       <div class="contact-links">
-        <a href="/cdn-cgi/l/email-protection#3058555e42594145555346535d5f4251554370575d51595c1e535f5d" class="contact-link">
+        <a id="mail" href="#" class="contact-link">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
           Email me
         </a>
-        <a href="https://www.linkedin.com/in/henrique-villa-moraes/" target="_blank" class="contact-link">
+        <a href="https://www.linkedin.com/in/henrique-villa-moraes/" target="_blank" rel="noopener" class="contact-link">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
           LinkedIn
         </a>
-        <a href="https://github.com/hvmoraes" target="_blank" class="contact-link">
+        <a href="Henrique_Moraes_CV.pdf" target="_blank" rel="noopener" class="contact-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M9 15h6M9 11h3"/></svg>
+          CV (PDF)
+        </a>
+        <a href="https://github.com/hvmoraes" target="_blank" rel="noopener" class="contact-link">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
           GitHub
         </a>
@@ -957,21 +1006,41 @@
 <!-- FOOTER -->
 <footer>
   <span class="footer-logo">Henrique Moraes</span>
-  <span>Lisbon, Portugal · Open to remote worldwide</span>
+  <span>Lisbon, Portugal · Open to travel and client facing work</span>
   <span>© 2026</span>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// Animate timeline items on scroll
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.style.opacity = '1';
-      e.target.style.transform = 'translateY(0)';
-    }
-  });
-}, { threshold: 0.1 });
+<script>
+// Assemble the email at runtime so scrapers get nothing useful.
+(function () {
+  var user = 'henriquecvcmoraes';
+  var host = 'gmail' + '.' + 'com';
+  var link = document.getElementById('mail');
+  if (link) { link.href = 'mailto:' + user + '@' + host; }
+})();
 
-document.querySelectorAll('.skill-card, .timeline-item, .post-card, .now-item').forEach(el => {
-  el.style.opacity = '0';
-  el.
+// Reveal cards on scroll.
+(function () {
+  var els = document.querySelectorAll('.skill-card, .timeline-item, .post-card, .now-item, .chip');
+  if (!('IntersectionObserver' in window)) { return; }
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  els.forEach(function (el) {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(16px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+})();
+</script>
+
+</body>
+</html>
